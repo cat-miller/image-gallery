@@ -1,6 +1,13 @@
+import StyledForm from "../styled_components/StyledForm";
+import StyledInput from "../styled_components/StyledInput";
+import StyledLabel from "../styled_components/StyledLabel";
+import {Dropzone} from "./Dropzone";
 import {useState} from "react";
+import StyledButton from "../styled_components/StyledButton";
+
 
 export function ImageUpload({handleAsset}) {
+  const [images, setImages] = useState(null);
 
   function handleUpload(tags, image) {
     const data = new FormData();
@@ -18,21 +25,20 @@ export function ImageUpload({handleAsset}) {
 
   function handleSubmit(event) {
     event.preventDefault()
-    const image = event.target.image.files[0]
+    // const image = event.target.image.files[0]
     const tags = event.target.tags.value.toLowerCase().split(',')
-    handleUpload(tags, image)
+    handleUpload(tags, images[0])
     event.target.reset()
+    console.log(images);
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Upload your image here:
-        <input required name='image' type="file"/>
-      </label>
-      <label>Add some tags separated by:
-        <input name='tags' type='text'/>
-      </label>
-      <button type='submit'>Upload</button>
-    </form>
+    <StyledForm onSubmit={handleSubmit}>
+      <Dropzone handleDrop={setImages} images={images}/>
+      <StyledLabel>
+        <StyledInput name='tags' type='text' placeholder='Add some tags separated by semicolon' />
+      </StyledLabel>
+      <StyledButton type='submit'>Upload</StyledButton>
+    </StyledForm>
   )
 }
