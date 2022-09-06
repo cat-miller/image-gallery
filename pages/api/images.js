@@ -8,7 +8,7 @@ export default async function handler(req, res){
         try {
             const config = {
                 method: 'get',
-                url: 'https://795723444716249:r8oSnHByZ-qrQvDmCN4HIAe2WW4@api.cloudinary.com/v1_1/codeandcats/resources/search',
+                url: 'https://795723444716249:r8oSnHByZ-qrQvDmCN4HIAe2WW4@api.cloudinary.com/v1_1/codeandcats/resources/search?with_field=tags',
                 headers: { }
             };
 

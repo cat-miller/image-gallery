@@ -1,9 +1,10 @@
 import {ImageUpload} from "../components/ImageUpload";
 import {Gallery} from "../components/Gallery";
 import {useState, useEffect} from "react";
+import {Header} from "../components/Header";
+import StyledPageWrapper from "../styled_components/StyledPageWrapper";
 
 export default function Home() {
-    const [image, setImage] = useState('');
     const [assets, setAssets] = useState([]);
 
     function handleAsset (newAsset) {
@@ -18,9 +19,10 @@ export default function Home() {
     },[])
 
   return (
-      <>
-        <ImageUpload image={image}  setImage={setImage} handleAsset={handleAsset}/>
+      <StyledPageWrapper>
+        <Header handleAsset={handleAsset}/>
+
           <Gallery assets={assets} />
-      </>
+      </StyledPageWrapper>
   )
 }

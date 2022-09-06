@@ -1,10 +1,10 @@
+import {GalleryElement} from "./GalleryElement";
+import StyledGalleryWrapper from "../styled_components/StyledGalleryWrapper";
 
 export function Gallery({assets}){
-
     return(
-        <>
-            <h1>Gallery</h1>
-            {assets.map(asset => <img key={asset['asset_id']} src={asset.url}/>)}
-        </>
+        <StyledGalleryWrapper>
+            {assets.map(asset => <GalleryElement key={asset['asset_id']} image={asset.url} tags={asset.tags} />)}
+        </StyledGalleryWrapper>
     )
 }
