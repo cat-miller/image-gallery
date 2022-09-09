@@ -27,8 +27,10 @@ export default function Home() {
 
         fetch(url)
             .then(resp => resp.json())
-            .then(data =>setAssets(data.resources))
+            .then(data => setAssets(data.resources))
     },[])
+
+
 
   useEffect(() =>{
 

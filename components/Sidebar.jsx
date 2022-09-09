@@ -10,7 +10,12 @@ export function Sidebar({tags, handleTagClick, activeFilter}){
       <h2>TAGS</h2>
       <p>Push a tag button and filter all images with this tag</p>
         <StyledTagWrapper>
-          {tags.map(tag => <TagElement key={tag} tag={tag} onClick={handleTagClick} isActive={tag === activeFilter} />)}
+          {tags.map(tag => {
+            if(tag === ''){
+              return null;
+            }
+            return <TagElement key={tag} tag={tag} onClick={handleTagClick} isActive={tag === activeFilter}/>
+          })}
         </StyledTagWrapper>
       <StyledUploadButton onClick={() => handleTagClick(undefined)}>Reset Filter</StyledUploadButton>
     </StyledSidebar>

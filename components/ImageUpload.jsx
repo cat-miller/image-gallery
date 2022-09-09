@@ -19,6 +19,7 @@ export function ImageUpload({handleAsset}) {
       .then(resp => resp.json())
       .then(data => {
         handleAsset(data)
+        setImages(undefined)
       })
       .catch(err => console.log(err));
   }
@@ -29,14 +30,14 @@ export function ImageUpload({handleAsset}) {
     const tags = event.target.tags.value.toLowerCase().split(',')
     handleUpload(tags, images[0])
     event.target.reset()
-    console.log(images);
+
   }
 
   return (
     <StyledForm onSubmit={handleSubmit}>
       <Dropzone handleDrop={setImages} images={images}/>
       <StyledLabel>
-        <StyledInput name='tags' type='text' placeholder='Add some tags separated by semicolon' />
+        <StyledInput name='tags' type='text' placeholder='Add some tags separated by semicolon' required />
       </StyledLabel>
       <StyledUploadButton type='submit'>Upload</StyledUploadButton>
     </StyledForm>

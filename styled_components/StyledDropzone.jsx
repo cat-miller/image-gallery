@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledDropzone = styled.div`
-  height: 100px;
+  height: 180px;
   width: 400px;
   background-color: white;
   border-radius: 10px;
