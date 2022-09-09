@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledButton = styled.button`
+const StyledUploadButton = styled.button`
   border: none;
   color: white;
   background-color: #EF8BFF;
@@ -12,4 +12,4 @@ const StyledButton = styled.button`
 
 `
 
-export default StyledButton;
+export default StyledUploadButton;

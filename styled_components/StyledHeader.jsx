@@ -7,5 +7,8 @@ const StyledHeader = styled.div`
   grid-area: header;
   padding-bottom: 1rem;
   
+  & h1 {
+    padding: 0.5rem;
+  }
 `
 export default StyledHeader;
