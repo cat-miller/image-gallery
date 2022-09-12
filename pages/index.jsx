@@ -1,5 +1,5 @@
 import {Gallery} from "../components/Gallery";
-import {useState, useEffect} from "react";
+import {useState, useEffect, useRef} from "react";
 import {Header} from "../components/Header";
 import StyledPageWrapper from "../styled_components/StyledPageWrapper";
 import {Sidebar} from "../components/Sidebar";
@@ -12,7 +12,9 @@ export default function Home() {
     const [activeFilter, setActiveFilter] = useState(undefined);
     const [assetsToShow, setAssetsToShow] = useState([]);
 
-    function handleTagClick(tag){
+
+
+  function handleTagClick(tag){
       setActiveFilter(tag);
     }
 
@@ -28,6 +30,8 @@ export default function Home() {
         fetch(url)
             .then(resp => resp.json())
             .then(data => setAssets(data.resources))
+
+
     },[])
 
 

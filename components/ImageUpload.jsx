@@ -37,7 +37,7 @@ export function ImageUpload({handleAsset}) {
     <StyledForm onSubmit={handleSubmit}>
       <Dropzone handleDrop={setImages} images={images}/>
       <StyledLabel>
-        <StyledInput name='tags' type='text' placeholder='Add some tags separated by semicolon' required />
+        <StyledInput name='tags' type='text' placeholder='Add some tags separated by comma' required />
       </StyledLabel>
       <StyledButton type='submit'>
         <span>

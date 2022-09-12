@@ -19,7 +19,7 @@ export function Sidebar({tags, handleTagClick, activeFilter}){
         </StyledTagWrapper>
       <StyledButton onClick={() => handleTagClick(undefined)}>
         <span>
-          Reset Filter
+          Reset
         </span>
       </StyledButton>
     </StyledSidebar>

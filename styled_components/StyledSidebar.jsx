@@ -5,6 +5,11 @@ const StyledSidebar = styled.div`
   align-content: start;
   padding-left: 1rem;
   font-size: 14px;
-  gap: 1rem;
+    gap: 1rem;
+  
+  & > p{
+    font-style: italic;
+  }
+  
 `
 export default StyledSidebar;

@@ -3,9 +3,10 @@ import styled from 'styled-components';
 const StyledGalleryElement = styled.div`
   height: 350px;
   width: auto;
-  background-color: white;
+  background-color: #FFFFFF60;
   border-radius: 10px;
-  box-shadow: 0 4px 15px #EF8BFF;
+  border: 1px solid #EF8BFF;
+  box-shadow: 4px 4px 0 #EF8BFF;
   display: grid;
 
   & div{
@@ -16,7 +17,9 @@ const StyledGalleryElement = styled.div`
   
   & span{
     border-radius: 999px;
-    background-color: #A484FF;
+    background-color: #39C5BD;
+    border: 1px solid #2EA09A;
+    box-shadow: 2px 2px 0 #2EA09A;
     color: white;
     font-size: small;
     padding: 0.2rem 0.6rem;
