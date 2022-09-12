@@ -3,7 +3,7 @@ import StyledInput from "../styled_components/StyledInput";
 import StyledLabel from "../styled_components/StyledLabel";
 import {Dropzone} from "./Dropzone";
 import {useState} from "react";
-import StyledUploadButton from "../styled_components/StyledUploadButton";
+import StyledButton from "../styled_components/StyledButton";
 
 
 export function ImageUpload({handleAsset}) {
@@ -39,7 +39,11 @@ export function ImageUpload({handleAsset}) {
       <StyledLabel>
         <StyledInput name='tags' type='text' placeholder='Add some tags separated by semicolon' required />
       </StyledLabel>
-      <StyledUploadButton type='submit'>Upload</StyledUploadButton>
+      <StyledButton type='submit'>
+        <span>
+          Upload
+        </span>
+      </StyledButton>
     </StyledForm>
   )
 }

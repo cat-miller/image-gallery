@@ -1,7 +1,7 @@
 import StyledSidebar from "../styled_components/StyledSidebar";
 import {TagElement} from "./TagElement";
 import StyledTagWrapper from "../styled_components/StyledTagWrapper";
-import StyledUploadButton from "../styled_components/StyledUploadButton";
+import StyledButton from "../styled_components/StyledButton";
 
 
 export function Sidebar({tags, handleTagClick, activeFilter}){
@@ -17,7 +17,11 @@ export function Sidebar({tags, handleTagClick, activeFilter}){
             return <TagElement key={tag} tag={tag} onClick={handleTagClick} isActive={tag === activeFilter}/>
           })}
         </StyledTagWrapper>
-      <StyledUploadButton onClick={() => handleTagClick(undefined)}>Reset Filter</StyledUploadButton>
+      <StyledButton onClick={() => handleTagClick(undefined)}>
+        <span>
+          Reset Filter
+        </span>
+      </StyledButton>
     </StyledSidebar>
   )
 }
