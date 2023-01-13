@@ -16,20 +16,20 @@ export function ImageUpload({handleAsset}) {
     data.append('cloud_name', 'codeandcats')
     data.append("tags", tags)
     fetch('https://api.cloudinary.com/v1_1/codeandcats/image/upload', {method: 'POST', body: data})
-      .then(resp => resp.json())
+      .then(res => res.json())
       .then(data => {
         handleAsset(data)
         setImages(undefined)
       })
-      .catch(err => console.log(err));
+      .catch(err => console.error(err));
   }
 
   function handleSubmit(event) {
     event.preventDefault()
-    // const image = event.target.image.files[0]
     const tags = event.target.tags.value.toLowerCase().split(',')
     handleUpload(tags, images[0])
     event.target.reset()
+
 
   }
 

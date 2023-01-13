@@ -7,7 +7,6 @@ const StyledPageWrapper = styled.div`
   bottom: 0;
   color: #46289f;
   background: linear-gradient(165deg, rgba(246,208,251,1) 20%, rgba(185,214,249,1) 100%);
-  transition: background 0.5s ease-in-out;
   font-family: "Roboto Light", sans-serif;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;

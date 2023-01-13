@@ -2,18 +2,18 @@ import axios from "axios";
 
 export default async function handler(req, res){
     const {method} = req;
-
+    const username = process.env.CLOUDINARY_USERNAME;
+    const password = process.env.CLOUDINARY_PASSWORD;
 
     if (method === 'GET') {
         try {
             const config = {
                 method: 'get',
-                url: 'https://795723444716249:r8oSnHByZ-qrQvDmCN4HIAe2WW4@api.cloudinary.com/v1_1/codeandcats/resources/search?with_field=tags',
+                url: `https://${username}:${password}@api.cloudinary.com/v1_1/codeandcats/resources/search?with_field=tags`,
                 headers: { }
             };
 
              const apiCall = await axios(config)
-            //return res.send(JSON.stringify(apiCall.data))
 
             res.status(200).json(apiCall.data);
         } catch (error) {

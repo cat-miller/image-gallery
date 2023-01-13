@@ -7,11 +7,11 @@ import {Footer} from "../components/Footer";
 
 export default function Home() {
     const [assets, setAssets] = useState([]);
+    // create a unique set for all asset tags arrays
     const tagsSet = new Set(assets.map(asset => asset.tags).join().split(','));
     const tags = [...tagsSet];
     const [activeFilter, setActiveFilter] = useState(undefined);
     const [assetsToShow, setAssetsToShow] = useState([]);
-
 
 
   function handleTagClick(tag){
@@ -23,17 +23,14 @@ export default function Home() {
         setAssets([newAsset, ...assets])
     }
 
-
     useEffect(()=>{
-        const url = "http://localhost:3000/api/images"
+        const url = "/api/images"
 
         fetch(url)
             .then(resp => resp.json())
             .then(data => setAssets(data.resources))
 
-
     },[])
-
 
 
   useEffect(() =>{
@@ -46,11 +43,12 @@ export default function Home() {
     }
   },[activeFilter, assets])
 
+
   return (
       <StyledPageWrapper>
         <Header handleAsset={handleAsset}/>
         <Sidebar tags={tags} handleTagClick={handleTagClick} activeFilter={activeFilter} />
-          <Gallery assets={assetsToShow} />
+        <Gallery assets={assetsToShow} />
         <Footer/>
       </StyledPageWrapper>
   )

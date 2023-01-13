@@ -4,7 +4,7 @@ import StyledDropzone from "../styled_components/StyledDropzone";
 import StyledPreviewImage from "../styled_components/StyledPreviewImage";
 
 export function Dropzone({handleDrop, images}) {
-  const onDrop = useCallback(acceptedFiles => {
+  const onDrop = useCallback((acceptedFiles) => {
     handleDrop(acceptedFiles)
   }, [handleDrop])
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
