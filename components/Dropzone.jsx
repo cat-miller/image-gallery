@@ -15,7 +15,7 @@ export function Dropzone({handleDrop, images}) {
       {
         isDragActive ?
           <p>Drop the files here ...</p> :
-          <p>Drag 'n' drop some files here, or click to select files</p>
+          <p>Drag &apos;n&apos; drop some files here, or click to select files</p>
       }
       {images && <StyledPreviewImage src={URL.createObjectURL(images[0])} onLoad={() => { URL.revokeObjectURL(images[0].preview)} }/>}
 
